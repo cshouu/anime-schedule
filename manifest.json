@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "author": "maple",
   "name": "番剧时间表（anime schedule）",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "从视频网站获取动漫更新时间表",
   "icons":{
     "16":"images/icon-16.png",
