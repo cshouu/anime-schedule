@@ -4,37 +4,36 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<script src='js/jquery-2.2.0.min.js'></script>
 		<script src='popup.js'></script>
-		<style type='text/css'>
-			body{
-				width:200px;
-				background:url(images/bgimg.jpg);
-			}
-			#tabs{
-				margin-left:10px;
-			}
-			span{
-				color:#f45a8d;
-				font-weight:bold;
-			}
-			li{
-				list-style:none;
-			}
-			ul,li{
-				margin:0px;
-				padding:0px;
-			}
-			a{
-				text-decoration:none;
-				color:gray;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="popup.css">
 	</head>
 	<body>
-		<nav id='tabs'>
-			<span> 一 </span><span> 二 </span><span> 三 </span><span> 四 </span><span> 五 </span><span> 六 </span><span> 日 </span>
-		</nav>
-		<hr />
-		<div id='content'>
-		</div>
+		<aside>
+			<img class='active' src='images/dilidili.png'></img>
+			<img src='images/qq.png'></img>
+			<img src='images/weibo.png'></img>
+		</aside>
+		<section>
+			<div id='dilidiv'>
+				<nav>
+					<span> 周一 </span><span> 二 </span><span> 三 </span><span> 四 </span><span> 五 </span><span> 六 </span><span> 日 </span>
+				</nav>
+				<hr/>
+				<div></div>
+			</div>
+			<div id='qqdiv'>
+				<nav>
+					<span> 最近更新 </span><span> 周一 </span><span> 二 </span><span> 三 </span><span> 四 </span><span> 五 </span><span> 六 </span><span> 日 </span>
+				</nav>
+				<hr/>
+				<div></div>
+			</div>
+			<div id='weibodiv'>
+				<nav>
+					<span> 10条 </span><span> 20 </span><span> 30 </span><span> 40 </span><span> 50 </span>
+				</nav>
+				<hr/>
+				<div></div>
+			</div>
+		</section>
 	</body>
 </html>
