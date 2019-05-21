@@ -1,0 +1,116 @@
+body{
+	width:240px;
+}
+aside{
+	float: left;
+	width: 30px;
+}
+section{
+	margin-left: 36px;
+}
+
+aside img{
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+aside .active{
+	border: 2px solid #f45a8d;
+}
+
+#dilidiv span{
+	color:#f45a8d;
+	font-weight:bold;
+	cursor: pointer;
+}
+#dilidiv li{
+	list-style:none;
+}
+#dilidiv ul,li{
+	margin:0px;
+	padding:0px;
+}
+#dilidiv .list li{
+	border-bottom: solid 1px #f2f2f5;
+	line-height: 24px;
+}
+
+#qqdiv span{
+	color:#f45a8d;
+	font-weight:bold;
+	cursor: pointer;
+}
+#qqdiv div.mod_figure {
+	-webkit-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 1em;
+	column-gap: 1em;
+}
+#qqdiv div.list_item {
+	margin-bottom: 1em;
+	-webkit-column-break-inside: avoid;
+	break-inside: avoid;
+	background: #eee;
+	border-radius: 4px;
+}
+#qqdiv .figure_pic{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+}
+
+#weibodiv span{
+	color:#f45a8d;
+	font-weight:bold;
+	cursor: pointer;
+}
+#weibodiv td {
+	border-bottom: solid 1px #f2f2f5;
+	line-height: 24px;
+}
+#weibodiv .td-01 {
+	text-align: center;
+	font-size: 14px;
+	color: #f26d5f;
+	padding-right: 4px;
+}
+#weibodiv .icon-top {
+	display: inline-block;
+	width: 12px;
+	height: 13px;
+	background: url(https://img.t.sinajs.cn/t4/appstyle/searchpc/css/pc/img/icon_top.png);
+}
+#weibodiv .td-02 span {
+	color: #808080;
+	margin-left: 4px;
+}
+#weibodiv .td-02 .face {
+	width: 16px;
+	height: 16px;
+	vertical-align: -4px;
+	margin: 0 2px;
+}
+#weibodiv .icon-txt {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	color: #fff;
+	border-radius: 2px;
+	text-align: center;
+	font-style: normal;
+}
+#weibodiv .icon-txt-hot {
+	background: #ff9406;
+}
+#weibodiv .icon-txt-boil {
+	background: #f86400;
+}
+#weibodiv .icon-txt-new {
+	background: #ff3852;
+}			
+
+a{
+	text-decoration:none;
+	color:gray;
+}
