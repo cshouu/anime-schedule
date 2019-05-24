@@ -4,6 +4,7 @@ body{
 aside{
 	float: left;
 	width: 30px;
+	margin-top: 30px;
 }
 section{
 	margin-left: 36px;
