@@ -17,9 +17,9 @@ $(function(){
 		}
 		// 点击腾讯视频
 		if(index == 1){
-			$('#qqdiv>nav>span').eq(day).css("color","black");
+			$('#qqdiv>nav>span').eq(day==0?7:day).css("color","black");
 			$('#qqdiv>div').html(bgPage.getQQHtml());
-			$('#qqdiv>div>div').eq(day).show().siblings().hide();
+			$('#qqdiv>div>div').eq(day==0?7:day).show().siblings().hide();
 		}
 		// 点击微博
 		if(index == 2){
