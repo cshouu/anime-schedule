@@ -1,6 +1,6 @@
 $(function(){
 	
-	var bgPage=chrome.extension.getBackgroundPage();
+	var bgPage = chrome.extension.getBackgroundPage();
 	var day = new Date().getDay();
 	
 	// 左侧边栏
@@ -12,7 +12,6 @@ $(function(){
 		if(index == 0){
 			$('#dilidiv>nav>span').eq(day-1).css("color","black");
 			$('#dilidiv>div').html(bgPage.getDiliHtml());
-			$('#dilidiv>a').attr('target','_blank');
 			$('#dilidiv>div>ul').children('li').eq(day-1).show().siblings().hide();
 		}
 		// 点击腾讯视频
@@ -26,6 +25,11 @@ $(function(){
 			$('#weibodiv>nav>span').eq(0).css("color","black");
 			$('#weibodiv>div').html(bgPage.getWeiboHtml());
 			$('#weibodiv>div>tr').slice(11).hide();
+		}
+		// 点击91美剧
+		if(index == 3){
+			$('#_91div>nav>span').eq(day-1).css("color","black");
+			$('#_91div>div').html(bgPage.get91Html(day));
 		}
     })
 	
@@ -47,6 +51,12 @@ $(function(){
 		$(this).css("color","black");
 		$('#weibodiv>div>tr').slice(1).hide();
 		$('#weibodiv>div>tr').slice($(this).index() * 10 + 1,($(this).index() + 1) * 10 + 1).show();
+	});
+	// 91美剧
+	$('#_91div>nav>span').click(function (){
+		$('#_91div>nav>span').css("color","#f45a8d");
+		$(this).css("color","black");
+		$('#_91div>div').html(bgPage.get91Html(($(this).index()+1)!=7?($(this).index()+1):0));
 	});
 	
 	// 初始化

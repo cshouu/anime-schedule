@@ -12,6 +12,9 @@ function getDiliHtml(){
 						.children("div.side")
 						.children("div.change").eq(1)
 						.children().eq(0);
+			$html.find("a").each(function(){
+				$(this).attr('target','_blank');
+			});
 			value = $html.html();
 		}
 	});
@@ -61,6 +64,36 @@ function getWeiboHtml(){
 			});
 			$html.find("img").each(function(){
 				$(this).attr("src","https:" + $(this).attr("src"));
+			});
+			value = $html.html();
+		}
+	});
+	return value;
+}
+function get91Html(day){
+	var value;
+	var url = "https://91mjw.com/schedule?";
+	if(day == 1)  url += "Monday";
+	if(day == 2)  url += "Tuesday";
+	if(day == 3)  url += "Wednesday";
+	if(day == 4)  url += "Thursday";
+	if(day == 5)  url += "Friday";
+	if(day == 6)  url += "Saturday";
+	if(day == 0)  url += "Sunday";
+	$.ajax({
+		url: url,
+		type:"POST",
+		dataType:"html",
+		cache:false,
+		async:false,
+		success:function(result){
+			var $result = $("<code></code>").append($(result));
+			var $html = $("div.m-movies", $result);
+			$html.find("img").each(function(){
+				$(this).attr("src", $(this).attr("data-original"));
+			});
+			$html.find("a").each(function(){
+				$(this).attr('target','_blank');
 			});
 			value = $html.html();
 		}
