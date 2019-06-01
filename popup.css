@@ -152,6 +152,37 @@ aside .active{
     color: #666666;
 }
 
+#doubandiv span{
+	color:#f45a8d;
+	font-weight:bold;
+	cursor: pointer;
+}
+#doubandiv > div {
+	-webkit-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 1em;
+	column-gap: 1em;
+}
+#doubandiv > div > li{
+	margin-bottom: 1em;
+	-webkit-column-break-inside: avoid;
+	break-inside: avoid;
+	background: #eee;
+	border-radius: 4px;
+}
+#doubandiv > div img{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+}
+#doubandiv li{
+	list-style:none;
+}
+#doubandiv ul,li{
+	margin:0px;
+	padding:0px;
+}
+
 a{
 	text-decoration:none;
 	color:gray;

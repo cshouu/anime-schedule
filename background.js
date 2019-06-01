@@ -100,3 +100,25 @@ function get91Html(day){
 	});
 	return value;
 }
+function getDoubanHtml(){
+	var value;
+	$.ajax({
+		url: 'https://movie.douban.com/',
+		type:"POST",
+		dataType:"html",
+		cache:false,
+		async:false,
+		success:function(result){
+			var $result = $("<code></code>").append($(result));
+			var $html = $("div#screening", $result).children().eq(1).children();
+			$html.find(".ticket_btn").each(function(){
+				$(this).remove();
+			});
+			$html.find("a").each(function(){
+				$(this).attr('target','_blank');
+			});
+			value = $html.html();
+		}
+	});
+	return value;
+}

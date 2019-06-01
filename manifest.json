@@ -2,8 +2,8 @@
   "manifest_version": 2,
   "author": "cshouu",
   "name": "番剧更新",
-  "version": "0.2.0",
-  "description": "从相关网站获取动漫时间表、动漫更新、微博热搜、美剧时间表信息",
+  "version": "0.3.0",
+  "description": "从相关网站获取动漫时间表、动漫更新、微博热搜、美剧时间表、热映电影信息",
   "icons":{
     "16":"images/icon-16.png",
 	"48":"images/icon-48.png",
@@ -21,6 +21,7 @@
     "http://www.dilidili.name/",
 	"https://v.qq.com/channel/cartoon",
 	"https://s.weibo.com/top/summary?cate=realtimehot",
-	"https://91mjw.com/schedule"
+	"https://91mjw.com/schedule",
+	"https://movie.douban.com/"
   ]
 }

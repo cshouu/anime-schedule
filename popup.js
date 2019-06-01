@@ -1,12 +1,11 @@
 $(function(){
-	
 	var bgPage = chrome.extension.getBackgroundPage();
 	var day = new Date().getDay();
 	
 	// 左侧边栏
 	$("aside>img").click(function(){
-        $(this).addClass('active').siblings('img').removeClass('active');
-        var index = $(this).index();
+		$(this).addClass('active').siblings('img').removeClass('active');
+		var index = $(this).index();
 		$('section>div').eq(index).css("display","block").siblings("div").css("display","none");
 		// 点击dilidili
 		if(index == 0){
@@ -31,7 +30,21 @@ $(function(){
 			$('#_91div>nav>span').eq(day-1).css("color","black");
 			$('#_91div>div').html(bgPage.get91Html(day));
 		}
-    })
+		// 点击豆瓣
+		if(index == 4){
+			$('#doubandiv>div').html(bgPage.getDoubanHtml());
+			if($('#doubandiv>nav').children().length == 1){
+				var pageCount = Math.ceil($('#doubandiv>div').children().length / 6);
+				for(var i=1;i<=pageCount;i++){
+					$('#doubandiv>nav').append("<span> " + i + " </span>");
+				}
+			}
+			if($('#doubandiv>nav').children().length > 1){
+				$('#doubandiv>nav>span').eq(1).css("color","black");
+			}
+			$('#doubandiv>div>li').slice(6).hide();
+		}
+	})
 	
 	// dilidili
 	$('#dilidiv>nav>span').click(function (){
@@ -57,6 +70,15 @@ $(function(){
 		$('#_91div>nav>span').css("color","#f45a8d");
 		$(this).css("color","black");
 		$('#_91div>div').html(bgPage.get91Html(($(this).index()+1)!=7?($(this).index()+1):0));
+	});
+	// 豆瓣
+	$("#doubandiv>nav").on("click","span", function() {
+		if($(this).index() != 0){
+			$('#doubandiv>nav>span').css("color","#f45a8d");
+			$(this).css("color","black");
+			$('#doubandiv>div>li').slice(0).hide();
+			$('#doubandiv>div>li').slice($(this).index()*6-6,$(this).index()*6).show();
+		}
 	});
 	
 	// 初始化
